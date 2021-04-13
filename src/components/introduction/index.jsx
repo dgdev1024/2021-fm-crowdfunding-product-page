@@ -21,7 +21,7 @@ const Introduction = ({ showBackProjectModal }) => {
   return (
     <section className="section intro">
       <LogoMastercraft className="intro__logo" />
-      <h1 className="heading intro__heading">{name}</h1>
+      <h2 className="heading intro__heading">{name}</h2>
       <p className="text intro__description">{description}</p>
       <div className="intro__buttons">
         <button

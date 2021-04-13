@@ -47,7 +47,7 @@ export default () => {
   }, [moneyBacked, moneyNeeded, backerCount, daysLeft]);
 
   return (
-    <section className="section backers">
+    <div className="section backers">
       <div className="backers__statistics">
         <div className="backers__statistic">
           <p className="text text--extra-large text--strong backers__statistic-value">
@@ -81,6 +81,6 @@ export default () => {
           }}
         ></div>
       </div>
-    </section>
+    </div>
   );
 };
