@@ -1,0 +1,30 @@
+/**
+ * @file styles/_variables.scss
+ * @brief Contains reusable variables.
+ */
+
+/* Screen Width Variables */
+$screen-small: "(min-width: 600px)";
+$screen-medium: "(min-width: 800px)";
+$screen-large: "(min-width: 1000px)";
+$screen-extra-large: "(min-width: 1200px)";
+
+/* Color Variables */
+$color-light-cyan: hsl(176, 50%, 75%);
+$color-moderate-cyan: hsl(176, 50%, 47%);
+$color-dark-cyan: hsl(176, 72%, 28%);
+$color-very-light-gray: hsl(0, 0%, 95%);
+$color-light-gray: hsl(0, 0%, 75%);
+$color-moderate-gray: hsl(0, 0%, 60%);
+$color-dark-gray: hsl(0, 0%, 48%);
+$color-black: hsl(0, 0%, 0%);
+
+/* Font Variables */
+$font-family: "Commissioner", sans-serif;
+$font-size: 16px;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+/* Time Variables */
+$time-transition: 0.3s;

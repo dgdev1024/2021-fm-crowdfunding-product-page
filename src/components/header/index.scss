@@ -1,0 +1,100 @@
+@import "../../styles/_variables";
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 96px;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+  transition: $time-transition;
+  z-index: 1;
+
+  &--shown {
+    height: 100vh;
+
+    @media #{$screen-medium} {
+      height: 64px;
+    }
+  }
+
+  &--shown &__nav {
+    opacity: 1;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 96px auto;
+    grid-template-areas: "logo toggle" "nav nav";
+
+    @media #{$screen-medium} {
+      grid-template-rows: 96px;
+      grid-template-areas: "logo nav";
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    align-self: center;
+    justify-self: start;
+  }
+
+  &__toggle {
+    grid-area: toggle;
+    align-self: center;
+    justify-self: end;
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__nav {
+    opacity: 0;
+    overflow: hidden;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    transition-property: opacity;
+    transition-duration: $time-transition;
+
+    @media #{$screen-medium} {
+      align-self: center;
+      justify-self: end;
+      opacity: 1;
+      flex-direction: row;
+      background-color: transparent;
+    }
+  }
+
+  &__nav-link {
+    padding: 24px;
+    font-size: 1.1rem;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    color: $color-black;
+
+    @media #{$screen-medium} {
+      padding: 0px;
+      margin-left: 32px;
+      font-size: 1rem;
+      color: white;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-light-gray;
+
+      @media #{$screen-medium} {
+        border-bottom: none;
+      }
+    }
+  }
+}

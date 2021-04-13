@@ -1,0 +1,231 @@
+@import "../../styles/variables";
+
+.modal-backer-perk {
+  display: grid;
+  grid-template-columns: 48px auto;
+  grid-template-areas: "selected intro" "description description" "remaining remaining" "form form";
+  gap: 24px 4px;
+
+  position: relative;
+  padding: 32px;
+  border: 1px solid $color-light-gray;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @media #{$screen-medium} {
+    grid-template-columns: 48px auto 96px;
+    grid-template-areas:
+      "selected intro remaining"
+      ". description description"
+      "form form form";
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &:not(&--out-of-stock):hover {
+    padding: 31px;
+    border-width: 2px;
+  }
+
+  &--selected {
+    padding: 31px;
+    border-width: 2px;
+    border-color: $color-moderate-cyan;
+  }
+
+  &--selected:after {
+    content: "";
+    position: absolute;
+    bottom: 160px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: $color-light-gray;
+
+    @media #{$screen-medium} {
+      bottom: 114px;
+    }
+  }
+
+  &--out-of-stock:hover {
+    cursor: not-allowed;
+  }
+
+  &--out-of-stock {
+    opacity: 0.3;
+  }
+
+  &__selected {
+    grid-area: selected;
+    align-self: center;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-light-gray;
+    border-radius: 50%;
+    transition: $time-transition;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 0px;
+      height: 0px;
+      background-color: $color-moderate-cyan;
+      border-radius: 50%;
+      transition: $time-transition;
+    }
+  }
+
+  &:not(&--out-of-stock):hover &__selected {
+    border-color: $color-moderate-cyan;
+  }
+
+  &--selected &__selected:after {
+    top: 7px;
+    left: 7px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__intro {
+    grid-area: intro;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media #{$screen-small} {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media #{$screen-medium} {
+      justify-content: flex-start;
+      gap: 16px;
+    }
+  }
+
+  &__heading {
+    transition: $time-transition;
+  }
+
+  &:not(&--out-of-stock):hover &__heading {
+    color: $color-moderate-cyan;
+  }
+
+  &__pledge {
+    font-weight: $font-weight-medium;
+    color: $color-moderate-cyan !important;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__remaining {
+    grid-area: remaining;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media #{$screen-small} {
+      align-self: center;
+    }
+
+    @media #{$screen-medium} {
+      justify-self: end;
+    }
+  }
+
+  &__remaining-count {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    color: $color-black;
+  }
+
+  &__pledge-form {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "label label" "input submit";
+    gap: 16px;
+    position: relative;
+    padding-top: 48px;
+
+    &:after {
+      content: "$";
+      position: absolute;
+      bottom: 17px;
+      left: 16px;
+      font-weight: $font-weight-bold;
+      color: $color-light-gray;
+    }
+
+    @media #{$screen-medium} {
+      grid-template-columns: 1fr auto auto;
+      grid-template-areas: "label input submit";
+
+      &:after {
+        left: unset;
+        right: 210px;
+      }
+    }
+  }
+
+  &__pledge-label {
+    grid-area: label;
+    align-self: center;
+    justify-self: center;
+
+    @media #{$screen-medium} {
+      justify-self: start;
+    }
+  }
+
+  &__pledge-input {
+    grid-area: input;
+    justify-self: start;
+    width: 121px;
+    padding: 1rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    background-color: $color-very-light-gray;
+    border: 1px solid $color-light-gray;
+    border-radius: 32px;
+    transition: $time-transition;
+
+    &:hover {
+      border-color: $color-moderate-cyan;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--not-enough {
+      border-color: red;
+    }
+
+    &--not-enough:hover {
+      border-color: darkred;
+    }
+
+    @media #{$screen-medium} {
+      justify-self: end;
+    }
+  }
+
+  &__pledge-submit {
+    grid-area: submit;
+    padding: 1rem 1rem;
+
+    @media #{$screen-medium} {
+      justify-self: end;
+    }
+  }
+}

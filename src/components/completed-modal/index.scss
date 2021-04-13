@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.completed-modal {
+  .modal__box {
+    max-width: 500px !important;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  &__caption {
+    text-align: center;
+  }
+
+  &__heading {
+    padding-bottom: 16px;
+  }
+
+  &__text {
+    line-height: 1.75rem;
+  }
+}

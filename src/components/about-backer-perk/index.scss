@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+
+.about-backer-perk {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "intro" "description" "remaining" "select";
+  gap: 24px;
+
+  padding: 32px;
+  border: 1px solid $color-light-gray;
+  border-radius: 8px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &--out-of-stock {
+    opacity: 0.3;
+  }
+
+  @media #{$screen-small} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "intro intro" "description description" "remaining select";
+  }
+
+  &__intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media #{$screen-small} {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__pledge {
+    font-weight: $font-weight-medium;
+    color: $color-moderate-cyan !important;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__remaining {
+    grid-area: remaining;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media #{$screen-small} {
+      align-self: center;
+    }
+  }
+
+  &__remaining-count {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    color: $color-black;
+  }
+
+  &__select {
+    grid-area: select;
+    align-self: start;
+    justify-self: start;
+
+    @media #{$screen-small} {
+      justify-self: end;
+    }
+  }
+
+  &--out-of-stock &__select {
+    background-color: $color-moderate-gray;
+
+    &:hover {
+      background-color: $color-moderate-gray;
+      cursor: not-allowed;
+    }
+  }
+}

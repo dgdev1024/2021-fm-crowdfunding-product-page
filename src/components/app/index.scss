@@ -1,0 +1,25 @@
+@import "../../styles/_variables";
+
+.main {
+  min-height: 100vh;
+  background-color: $color-very-light-gray;
+  background-image: url("../../images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media #{$screen-small} {
+    background-image: url("../../images/image-hero-desktop.jpg");
+  }
+
+  &__container {
+    padding-top: 200px;
+
+    @media #{$screen-small} {
+      padding-top: 125px;
+    }
+
+    @media #{$screen-medium} {
+      padding-top: 200px;
+    }
+  }
+}

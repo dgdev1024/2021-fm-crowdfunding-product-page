@@ -1,0 +1,92 @@
+@import "../../styles/variables";
+
+.backers {
+  &__statistics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media #{$screen-medium} {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__statistic {
+    @media #{$screen-medium} {
+      width: 100%;
+    }
+  }
+
+  &__statistic:not(:last-child) {
+    position: relative;
+    padding-bottom: 64px;
+
+    @media #{$screen-medium} {
+      padding-bottom: 0px;
+      padding-right: 64px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 32px;
+      left: calc(50% - 48px);
+      width: 96px;
+      height: 1px;
+      background-color: $color-light-gray;
+
+      @media #{$screen-medium} {
+        bottom: unset;
+        left: unset;
+        bottom: calc(50% - 32px);
+        right: 32px;
+        width: 1px;
+        height: 64px;
+      }
+    }
+  }
+
+  &__statistic:last-child {
+    padding-bottom: 32px;
+
+    @media #{$screen-medium} {
+      padding-bottom: 0px;
+    }
+  }
+
+  &__statistic-value {
+    padding-bottom: 12px;
+    text-align: center;
+
+    @media #{$screen-medium} {
+      text-align: left;
+    }
+  }
+
+  &__statistic-caption {
+    text-align: center;
+
+    @media #{$screen-medium} {
+      text-align: left;
+    }
+  }
+
+  &__progress {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background-color: $color-very-light-gray;
+    border-radius: 12px;
+  }
+
+  &__progress-value {
+    position: absolute;
+    height: 12px;
+    background-color: $color-dark-cyan;
+    border-radius: 12px;
+    transition: 0.1s;
+  }
+}

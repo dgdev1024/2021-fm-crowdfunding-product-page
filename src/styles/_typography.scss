@@ -1,0 +1,83 @@
+/**
+ * @file styles/_typography.scss
+ * @brief Contains styles for often-used global classes.
+ */
+
+@import "./_variables";
+
+.text {
+  font-size: 1rem;
+  color: $color-dark-gray;
+  line-height: 1.5rem;
+
+  &--large {
+    font-size: 1.5rem;
+  }
+
+  &--extra-large {
+    font-size: 2rem;
+  }
+
+  &--strong {
+    font-weight: $font-weight-bold;
+    color: $color-black;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  color: $color-black;
+
+  &--large {
+    font-size: 2rem;
+  }
+
+  &--small {
+    font-size: 1.25rem;
+  }
+
+  &--smaller {
+    font-size: 1.1rem;
+  }
+}
+
+.button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  color: $color-very-light-gray;
+  background-color: $color-moderate-cyan;
+  border: none;
+  border-radius: 32px;
+  transition: $time-transition;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $color-dark-cyan;
+  }
+
+  &--gray {
+    color: $color-dark-gray;
+    background-color: $color-very-light-gray;
+  }
+}
+
+.section {
+  width: 100%;
+  max-width: 700px;
+  margin: 0px auto;
+  margin-bottom: 24px;
+  padding: 32px;
+  background-color: white;
+  border: 1px solid $color-light-gray;
+  border-radius: 16px;
+
+  &:last-child {
+    margin-bottom: 64px;
+  }
+}

@@ -1,0 +1,38 @@
+/**
+ * @file styles/_global.scss
+ * @brief Contains styling for global elements.
+ */
+
+@import "./_variables";
+
+/* CSS Reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+}
+
+/* Root Font Size */
+html {
+  font-size: $font-size;
+  background-color: $color-very-light-gray;
+}
+
+.container {
+  width: 90%;
+  margin: 0px auto;
+
+  @media #{$screen-medium} {
+    width: 85%;
+  }
+
+  @media #{$screen-large} {
+    width: 80%;
+  }
+
+  @media #{$screen-extra-large} {
+    width: 75%;
+  }
+}
